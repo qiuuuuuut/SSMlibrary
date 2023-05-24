@@ -65,7 +65,9 @@ background-attachment: fixed;">
     <script>
         $("#id").keyup(
             function () {
+                var v=$("#id").val();
                 if(isNaN($("#id").val())){
+                    console.log($("#id").val());
                     $("#info").text("提示:账号只能为数字");
                 }
                 else {

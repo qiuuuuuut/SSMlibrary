@@ -7,7 +7,7 @@ CREATE TABLE `admin` ( `admin_id` BIGINT NOT NULL PRIMARY KEY, `password` VARCHA
 INSERT INTO `admin`
 VALUES
 	( 123456, '123456', 'admin' );
-CREATE TABLE `book_info` (
+CREATE TABLE `book_info`(
 	`book_id` BIGINT NOT NULL PRIMARY KEY,
 	`name` VARCHAR ( 20 ) NOT NULL,
 	`author` VARCHAR ( 15 ) NOT NULL,

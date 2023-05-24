@@ -30,6 +30,7 @@ background-attachment: fixed;">
     <script>
         $("#searchform").submit(function () {
             var val=$("#search").val();
+            console.log(val);
             if(val==''){
                 alert("请输入关键字");
                 return false;

@@ -9,6 +9,7 @@
     <version>1.1</version>
     <packaging>war</packaging>
 
+<!--    properties标签可以把版本号作为变量进行声明，比如${spring.version}-->
     <properties>
         <file.encoding>UTF-8</file.encoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -19,12 +20,13 @@
         <servlet.version>3.0-alpha-1</servlet.version>
         <commons-codec.version>1.9</commons-codec.version>
         <commons-dbcp.version>1.4</commons-dbcp.version>
+<!--        Jetty是一个轻量级的、嵌入式的Web服务器-->
         <jetty.version>8.1.8.v20121106</jetty.version>
     </properties>
     <dependencies>
         <dependency>
             <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
+            <artifactId>javax.servlet-api</artifactId> <!--包括了Servlet的核心类和常用的接口-->
             <version>3.1.0</version>
         </dependency>
         <dependency>
@@ -57,9 +59,10 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>${mysql.version}</version>
         </dependency>
+
         <dependency>
             <groupId>javax.servlet</groupId>
-            <artifactId>jstl</artifactId>
+            <artifactId>jstl</artifactId>  <!--        提供了一组标准的标签，可以让Java开发人员在JSP页面中更加容易地实现一些常见的Web应用功能，-->
             <version>1.2</version>
         </dependency>
         <dependency>
@@ -78,6 +81,12 @@
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>
             <version>3.4.1</version>
+        </dependency>
+<!--提供了基于注解的编程模型-->
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>jsr250-api</artifactId>
+            <version>1.0</version>
         </dependency>
     </dependencies>
 
