@@ -76,6 +76,9 @@ background-attachment: fixed;">
         } else if ($("#newPasswd").val() != $("#reNewPasswd").val()) {
             $("#tishi").text("两次输入的新密码不同，请检查");
             return false;
+        }else if ($("#newPasswd").val() == $("#oldPasswd").val()){
+            $("#tishi").text("和旧密码相同");
+            return false;
         }
     })
 </script>

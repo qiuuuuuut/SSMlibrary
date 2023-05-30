@@ -9,23 +9,57 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ef084b5-bb77-4f1a-911b-9b99a0ea9d05" name="变更" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+    <list default="true" id="5ef084b5-bb77-4f1a-911b-9b99a0ea9d05" name="变更" comment="变更">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/11f411ec-8d24-44a7-a9f8-698951b39f4b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/11f411ec-8d24-44a7-a9f8-698951b39f4b.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library (1) (com.library).iml" beforeDir="false" afterPath="$PROJECT_DIR$/library (1) (com.library).iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library.sql" beforeDir="false" afterPath="$PROJECT_DIR$/library.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/library/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/controller/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/library/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/library/controller/ReaderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/controller/ReaderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/library/controller/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/controller/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/library/dao/AdminDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/dao/AdminDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/library/dao/BookDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/dao/BookDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/library/dao/LendDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/dao/LendDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MyBatis/book.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/MyBatis/book.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/book-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/book-context.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/MyBatis/book.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/MyBatis/book.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/book-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/book-context.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/library/controller/BookController.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/library/controller/BookController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/library/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/library/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/library/controller/ReaderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/library/controller/ReaderController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/library/controller/WebConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/library/controller/WebConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/library/dao/AdminDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/library/dao/AdminDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/library/dao/BookDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/library/dao/BookDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/library/dao/LendDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/library/dao/LendDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin_books.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin_books.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin_header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin_header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin_repasswd.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin_repasswd.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/reader_books.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/reader_books.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/reader_header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/reader_header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/reader_main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/reader_main.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MyBatis/book.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MyBatis/book.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/book-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/book-context.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/library/controller/BookController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/library/controller/BookController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/library/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/library/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/library/controller/ReaderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/library/controller/ReaderController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/library/controller/WebConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/library/controller/WebConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/library/dao/AdminDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/library/dao/AdminDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/library/dao/BookDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/library/dao/BookDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/library/dao/LendDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/library/dao/LendDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/library.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/library.war" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -65,13 +99,13 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/下载的文件/library",
+    "last_opened_file_path": "D:/LibrarySystem/src/main/java/com/library",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "模块",
+    "project.structure.last.edited": "工件",
     "project.structure.proportion": "0.15429688",
     "project.structure.side.proportion": "0.33448276",
     "settings.editor.selected.configurable": "preferences.pluginManager",
@@ -84,6 +118,12 @@
     ]
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\LibrarySystem\src\main\java\com\library" />
+      <recent name="D:\LibrarySystem\src\main\webapp\static\img" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Tomcat 8.5.68" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.68" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
@@ -185,11 +225,26 @@
       <workItem from="1684740994436" duration="3443000" />
       <workItem from="1684744479620" duration="102000" />
       <workItem from="1684744599203" duration="4434000" />
-      <workItem from="1684887526762" duration="21197000" />
+      <workItem from="1684887526762" duration="27073000" />
+      <workItem from="1685012791204" duration="8895000" />
+      <workItem from="1685059641936" duration="21841000" />
+      <workItem from="1685359535503" duration="6301000" />
+      <workItem from="1685418978648" duration="10366000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

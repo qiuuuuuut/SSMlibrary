@@ -40,7 +40,7 @@ public class BookController {
         if (bookService.matchBook(searchWord)) {
             ArrayList<Book> books = bookService.queryBook(searchWord);
             ModelAndView modelAndView = new ModelAndView("admin_books");
-            modelAndView.addObject("books", books);
+            modelAndView.addObject("books", books);//在 JSP页面中可以通过 EL 表达式 ${books} 来获取属性的值。
             return modelAndView;
         } else {
             return new ModelAndView("admin_books", "error", "没有匹配的图书");
@@ -78,7 +78,7 @@ public class BookController {
         if (bookService.addBook(book)) {
             redirectAttributes.addFlashAttribute("succ", "图书添加成功！");
         } else {
-            redirectAttributes.addFlashAttribute("succ", "图书添加失败！");
+            redirectAttributes.addFlashAttribute("error", "图书添加失败！");
         }
         return "redirect:/admin_books.html";
     }

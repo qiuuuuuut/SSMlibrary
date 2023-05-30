@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%--nav导航栏标签--%>
 <nav style="position:fixed;z-index: 999;width: 100%;background-color: #25c6fc" class="navbar navbar-default"
      role="navigation">
     <div class="container-fluid">
@@ -8,6 +9,7 @@
         <div class="collapse navbar-collapse" >
             <ul class="nav navbar-nav navbar-left">
                 <li class="dropdown">
+<%--          data-toggle="dropdown"用于创建一个下拉菜单，在用户点击指定元素时，自动弹出菜单选项供用户选择,b使用标签和"class=‘caret’"样式类，创建了一个小三角形的图标         --%>
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: white">
                         图书管理
                         <b class="caret"></b>
@@ -45,7 +47,7 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="login.html" style="color: white">${admin.username}, 已登录</a>
+                <li><a href="#" style="color: white">${admin.username}, 已登录</a>
                 </li>
                 <li><a href="logout.html" style="color: white">退出</a></li>
             </ul>

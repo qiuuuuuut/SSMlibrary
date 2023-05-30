@@ -755,42 +755,43 @@
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="223" parent="213" name="book_id">
-      <AutoIncrement>15</AutoIncrement>
+      <AutoIncrement>16</AutoIncrement>
       <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="224" parent="213" name="name">
-      <DasType>varchar(20)|0s</DasType>
+      <DasType>longtext|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="225" parent="213" name="author">
-      <DasType>varchar(15)|0s</DasType>
+      <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="226" parent="213" name="publish">
-      <DasType>varchar(20)|0s</DasType>
+      <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
     <column id="227" parent="213" name="ISBN">
-      <DasType>varchar(15)|0s</DasType>
+      <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
     <column id="228" parent="213" name="introduction">
       <DasType>text|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
     <column id="229" parent="213" name="language">
-      <DasType>varchar(4)|0s</DasType>
+      <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
     <column id="230" parent="213" name="price">
-      <DasType>decimal(10,2 digit)|0s</DasType>
+      <DasType>decimal(40,2 digit)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>8</Position>
     </column>

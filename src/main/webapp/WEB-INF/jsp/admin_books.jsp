@@ -16,8 +16,10 @@
 background-size:100% 100%;
 background-attachment: fixed;">
 
+<%--导航栏--%>
 <div id="header"></div>
 
+<%--搜索框--%>
 <div style="padding: 70px 550px 10px">
     <form   method="post" action="querybook.html" class="form-inline"  id="searchform">
         <div class="input-group">
@@ -38,6 +40,9 @@ background-attachment: fixed;">
         })
     </script>
 </div>
+<%--两个c：if 存储一个操作成功与否--%>
+<%--使用了 Bootstrap 的样式，其中 alert alert-success 表示提示框的样式为绿色的成功提示框，
+alert-dismissable 表示该提示框可以被关闭。关闭按钮的 <button> 标签中，data-dismiss="alert" 属性表示点击按钮时关闭提示框。--%>
 <div style="position: relative;top: 10%">
 <c:if test="${!empty succ}">
     <div class="alert alert-success alert-dismissable">
@@ -58,6 +63,7 @@ background-attachment: fixed;">
     </div>
 </c:if>
 </div>
+<%--展示图书，一开始是展示所有图书，查询之后是所查图书--%>
 <div class="panel panel-default" style="width: 90%;margin-left: 5%">
     <div class="panel-heading" style="background-color: #fff">
         <h3 class="panel-title">

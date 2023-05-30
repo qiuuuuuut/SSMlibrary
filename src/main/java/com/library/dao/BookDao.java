@@ -12,9 +12,12 @@ import java.util.List;
 public class BookDao {
 
     private final static String NAMESPACE = "com.library.dao.BookDao.";
+    //sqlSessionTemplate方法里面第一个参数是mapper的id；
+    // 第二个参数是需要传递的参数，在mapper里面可以用#{...}来调用
     @Resource
     private SqlSessionTemplate sqlSessionTemplate;
 
+    //显示匹配书的数量，用于判断查找的时候是不是有匹配的书，没有的话，会出现‘没有匹配的书’
     public int matchBook(final String searchWord) {
         String search = "%" + searchWord + "%";
         return sqlSessionTemplate.selectOne(NAMESPACE + "matchBook", search);

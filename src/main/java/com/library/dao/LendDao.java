@@ -18,6 +18,7 @@ public class LendDao {
 
     private final static String NAMESPACE = "com.library.dao.LendDao.";
 
+//    还书，在借书表里面写上归还时间，即当前系统时间
     public int returnBookOne(final long book_id, long reader_id) {
         Map<String, Object> map = new HashMap<>();
         map.put("book_id", book_id);
@@ -25,10 +26,12 @@ public class LendDao {
         return sqlSessionTemplate.update(NAMESPACE + "returnBookOne", map);
     }
 
-    public int returnBookTwo(final long book_id) {
+//    还书，在图书表里面把所还书的数目加1
+        public int returnBookTwo(final long book_id) {
         return sqlSessionTemplate.update(NAMESPACE + "returnBookTwo", book_id);
     }
 
+    //借书，在借书表里面加一条记录
     public int lendBookOne(final long book_id, final long reader_id) {
         Map<String, Object> map = new HashMap<>();
         map.put("book_id", book_id);
@@ -36,20 +39,24 @@ public class LendDao {
         return sqlSessionTemplate.insert(NAMESPACE + "lendBookOne", map);
     }
 
+    //借书，在图书表里面把所借书的数目减1
     public int lendBookTwo(final long book_id) {
         return sqlSessionTemplate.update(NAMESPACE + "lendBookTwo", book_id);
     }
 
+    //管理员：展示所有借书记录
     public ArrayList<Lend> lendList() {
         List<Lend> result = sqlSessionTemplate.selectList(NAMESPACE + "lendList");
         return (ArrayList<Lend>) result;
     }
 
+//    读者：展示自己的借书记录
     public ArrayList<Lend> myLendList(final long reader_id) {
         List<Lend> result = sqlSessionTemplate.selectList(NAMESPACE + "myLendList", reader_id);
         return (ArrayList<Lend>) result;
     }
 
+    //删除借书记录，没还的不能删
     public int deleteLend(final long ser_num) {
         return sqlSessionTemplate.delete(NAMESPACE + "deleteLend", ser_num);
     }

@@ -2,6 +2,9 @@ package com.library.controller;
 
 import com.library.bean.Admin;
 import com.library.bean.ReaderCard;
+import com.library.codeutil.IVerifyCodeGen;
+import com.library.codeutil.SimpleCharVerifyCodeGenImpl;
+import com.library.codeutil.VerifyCode;
 import com.library.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,6 +16,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.io.IOException;
 import java.util.HashMap;
 
 @Controller
@@ -29,27 +34,70 @@ public class LoginController {
 
     @RequestMapping(value = {"/", "/login.html"})
     public String toLogin(HttpServletRequest request) {
-        request.getSession().invalidate();
+        request.getSession().invalidate();//用于销毁当前会话的所有信息
         return "index";
     }
 
     @RequestMapping("/logout.html")
     public String logout(HttpServletRequest request) {
         request.getSession().invalidate();
-        return "redirect:/login.html";
+        return "redirect:/login.html";  //通过将字符串"redirect:"作为返回值的前缀，Spring框架会自动将其解析为一个重定向操作
+    }
+
+
+    /**
+     * 获取验证码方法
+     * @param request
+     * @param response
+     */
+    @RequestMapping("/verifyCode")
+    public void verifyCode(HttpServletRequest request, HttpServletResponse response) {
+        IVerifyCodeGen iVerifyCodeGen = new SimpleCharVerifyCodeGenImpl();
+        try {
+            //设置长宽
+            VerifyCode verifyCode = iVerifyCodeGen.generate(80, 28);
+            String code = verifyCode.getCode();
+            //将VerifyCode绑定session
+            request.getSession().setAttribute("VerifyCode", code);
+            //设置响应头
+            response.setHeader("Pragma", "no-cache");
+            //设置响应头
+            response.setHeader("Cache-Control", "no-cache");
+            //在代理服务器端防止缓冲
+            response.setDateHeader("Expires", 0);
+            //设置响应内容类型
+            response.setContentType("image/jpeg");
+            response.getOutputStream().write(verifyCode.getImgBytes());
+            response.getOutputStream().flush();
+        } catch (IOException e) {
+            System.out.println("异常处理");
+        }
     }
 
 
     //负责处理loginCheck.html请求
     //请求参数会根据参数名称默认契约自动绑定到相应方法的入参中
     @RequestMapping(value = "/api/loginCheck", method = RequestMethod.POST)
-    public @ResponseBody
-    Object loginCheck(HttpServletRequest request) {
+    @ResponseBody
+    public Object loginCheck(HttpServletRequest request) {
         long id = Long.parseLong(request.getParameter("id"));
         String passwd = request.getParameter("passwd");
+        String yanzhenma=request.getParameter("yanzhenma");
         boolean isReader = loginService.hasMatchReader(id, passwd);
         boolean isAdmin = loginService.hasMatchAdmin(id, passwd);
         HashMap<String, String> res = new HashMap<>();
+        //判断验证码是否正确（验证码已经放入session）
+        HttpSession session = request.getSession();
+        String realCode = (String)session.getAttribute("VerifyCode");
+        System.out.println(realCode);
+        System.out.println(yanzhenma);
+        if(!realCode.toLowerCase().equals(yanzhenma.toLowerCase()))
+        {
+
+            res.put("stateCode", "3");
+            res.put("msg", "验证码错误！");
+            return res;
+        }
         if (isAdmin) {
             Admin admin = new Admin();
             admin.setAdminId(id);

@@ -108,7 +108,7 @@ public class ReaderController {
         if (readerId > 0 && readerCardService.addReaderCard(readerInfo, password)) {
             redirectAttributes.addFlashAttribute("succ", "添加读者信息成功！");
         } else {
-            redirectAttributes.addFlashAttribute("succ", "添加读者信息失败！");
+            redirectAttributes.addFlashAttribute("error", "添加读者信息失败！");
         }
         return "redirect:/allreaders.html";
     }

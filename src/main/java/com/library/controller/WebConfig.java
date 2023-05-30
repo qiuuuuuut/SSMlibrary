@@ -22,11 +22,13 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         return resolver;
     }
 
+    //配置默认Servlet处理
     @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
     }
 
+    //
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/img/**")

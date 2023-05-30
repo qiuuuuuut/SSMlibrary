@@ -53,6 +53,7 @@ background-attachment: fixed;">
         <div class="alert alert-danger alert-dismissable">
             <button type="button" class="close" data-dismiss="alert"
                     aria-hidden="true">
+<%--                &times是一个HTML实体编码,表示关闭按钮--%>
                 &times;
             </button>
                 ${error}

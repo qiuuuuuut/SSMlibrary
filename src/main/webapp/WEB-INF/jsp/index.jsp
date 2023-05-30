@@ -27,7 +27,7 @@
         }
     </style>
 </head>
-<body background="img/timg.jpg" style=" background-repeat:no-repeat ;
+<body background="img/1.png" style=" background-repeat:no-repeat ;
 background-size:100% 100%;
 background-attachment: fixed;">
 <c:if test="${!empty error}">
@@ -51,6 +51,13 @@ background-attachment: fixed;">
             <label for="passwd">密码</label>
             <input type="password" class="form-control" id="passwd" placeholder="请输入密码">
         </div>
+        <div class="form-group">
+            <label for="yanzhenma">验证码</label>
+            <input type="text" class="form-control" id="yanzhenma" placeholder="请输入验证码">
+            <div>
+                <a href="javascript:void(0)" onclick="getCode()"><img id="code" ></a>
+            </div>
+        </div>
         <div class="checkbox text-left">
             <label>
                 <input type="checkbox" id="remember">记住密码
@@ -63,6 +70,27 @@ background-attachment: fixed;">
     </div>
 </div>
     <script>
+        getCode();
+        /**
+         * 获取验证码
+         */
+        function getCode(){
+            document.getElementById("code").src=timestamp("verifyCode");
+        }
+
+        /**
+         * 实现刷新更滑验证码
+         */
+        function timestamp(url){
+            var gettime=new Date().getTime();
+            if(url.indexOf("?")>-1){
+                url=url+"&timestamp="+gettime;
+            }else{
+                url=url+"?timestamp="+gettime;
+            }
+            return url;
+        }
+
         $("#id").keyup(
             function () {
                 var v=$("#id").val();
@@ -81,7 +109,7 @@ background-attachment: fixed;">
                 username: username,
                 password: password,
                 remember: checked
-            }, {expires: 30, path: ''})
+            }, {expires: 30, path: ''})//过期时间为30天，作用路径为空
         }
         // 若选择记住登录信息，则进入页面时设置登录信息
         function setLoginStatus() {
@@ -102,12 +130,16 @@ background-attachment: fixed;">
         $("#loginButton").click(function () {
             var id =$("#id").val();
             var passwd=$("#passwd").val();
+            var yanzhenma=$("#yanzhenma").val();
             var remember=$("#remember").prop('checked');
             if (id == '') {
                 $("#info").text("提示:账号不能为空");
             }
             else if( passwd ==''){
                 $("#info").text("提示:密码不能为空");
+            }
+            else if(yanzhenma ==''){
+                $("info").text("提示:验证码不能为空");
             }
             else if(isNaN( id )){
                 $("#info").text("提示:账号必须为数字");
@@ -118,15 +150,17 @@ background-attachment: fixed;">
                     url: "api/loginCheck",
                     data: {
                         id:id ,
-                        passwd: passwd
+                        passwd: passwd,
+                        yanzhenma:yanzhenma
                     },
                     dataType: "json",
+                    // success函数，请求成功后执行
                     success: function(data) {
                         if (data.stateCode.trim() === "0") {
                             $("#info").text("提示:账号或密码错误！");
                         } else if (data.stateCode.trim() === "1") {
                             $("#info").text("提示:登陆成功，跳转中...");
-                            window.location.href="admin_main.html";
+                            window.location.href="admin_main.html";//LoginController里面
                         } else if (data.stateCode.trim() === "2") {
                             if(remember){
                                 rememberLogin(id,passwd,remember);
@@ -136,6 +170,8 @@ background-attachment: fixed;">
                             $("#info").text("提示:登陆成功，跳转中...");
                             window.location.href="reader_main.html";
 
+                        }else if(data.stateCode.trim() === "3") {
+                            $("#info").text("提示:验证码错误！");
                         }
                     }
                 });
