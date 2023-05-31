@@ -62,7 +62,10 @@ background-attachment: fixed;">
             <label>
                 <input type="checkbox" id="remember">记住密码
             </label>
+
+            <a href="register.html">没有账号，注册一个？</a>
         </div>
+
 
         <p style="text-align: right;color: red;position: absolute" id="info"></p><br/>
         <button id="loginButton"  class="btn btn-primary  btn-block">登陆

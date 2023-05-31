@@ -89,8 +89,8 @@ public class LoginController {
         //判断验证码是否正确（验证码已经放入session）
         HttpSession session = request.getSession();
         String realCode = (String)session.getAttribute("VerifyCode");
-        System.out.println(realCode);
-        System.out.println(yanzhenma);
+//        System.out.println(realCode);
+//        System.out.println(yanzhenma);
         if(!realCode.toLowerCase().equals(yanzhenma.toLowerCase()))
         {
 
