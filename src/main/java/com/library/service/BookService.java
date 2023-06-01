@@ -12,16 +12,16 @@ public class BookService {
     @Autowired
     private BookDao bookDao;
 
-    public ArrayList<Book> queryBook(String searchWord) {
-        return bookDao.queryBook(searchWord);
+    public ArrayList<Book> queryBook(String author,String publish,String name) {
+        return bookDao.queryBook(author,publish,name);
     }
 
     public ArrayList<Book> getAllBooks() {
         return bookDao.getAllBooks();
     }
 
-    public boolean matchBook(String searchWord) {
-        return bookDao.matchBook(searchWord) > 0;
+    public boolean matchBook(String author,String publish,String name) {
+        return bookDao.matchBook(author,publish,name) > 0;
     }
 
     public boolean addBook(Book book) {

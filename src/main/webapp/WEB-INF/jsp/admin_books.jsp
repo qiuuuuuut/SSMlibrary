@@ -20,20 +20,29 @@ background-attachment: fixed;">
 <div id="header"></div>
 
 <%--搜索框--%>
-<div style="padding: 70px 550px 10px">
+<div style="padding: 70px 150px 10px">
     <form   method="post" action="querybook.html" class="form-inline"  id="searchform">
-        <div class="input-group">
-           <input type="text" placeholder="输入图书名" class="form-control" id="search" name="searchWord" class="form-control">
-            <span class="input-group-btn">
-                            <input type="submit" value="搜索" class="btn btn-default">
-            </span>
+        <div class="form-group ">
+            <label for="author">作者</label>
+            <input type="text" class="form-control" id="author" placeholder="请输入作者" name="author">
         </div>
+        <div class="form-group">
+            <label for="publish">出版社</label>
+            <input type="text" class="form-control" id="publish" placeholder="请输入出版社" name="publish">
+        </div>
+        <div class="form-group">
+            <label for="name">图书名</label>
+           <input type="text" placeholder="输入图书名" class="form-control" id="name"  class="form-control" name="name">
+        </div>
+        <input type="submit" value="搜索" class="btn btn-default">
     </form>
     <script>
         $("#searchform").submit(function () {
-            var val=$("#search").val();
-            console.log(val);
-            if(val==''){
+            var author=$("#author").val();
+            var publish=$("#publish").val();
+            var name=$("#name").val();
+            // console.log(val);
+            if(author=='' && publish == '' && name == ''){
                 alert("请输入关键字");
                 return false;
             }

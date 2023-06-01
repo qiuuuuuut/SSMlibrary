@@ -6,7 +6,9 @@ import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public class BookDao {
@@ -18,14 +20,26 @@ public class BookDao {
     private SqlSessionTemplate sqlSessionTemplate;
 
     //显示匹配书的数量，用于判断查找的时候是不是有匹配的书，没有的话，会出现‘没有匹配的书’
-    public int matchBook(final String searchWord) {
-        String search = "%" + searchWord + "%";
-        return sqlSessionTemplate.selectOne(NAMESPACE + "matchBook", search);
+    public int matchBook(String author,String publish,String name) {
+        Map<String, Object> paramMap = new HashMap<>();
+        String author1 = "%" + author + "%";
+        String publish1 = "%" + publish + "%";
+        String name1 = "%" + name + "%";
+        paramMap.put("author", author1);
+        paramMap.put("publish", publish1);
+        paramMap.put("name", name1);
+        return sqlSessionTemplate.selectOne(NAMESPACE + "matchBook", paramMap);
     }
 
-    public ArrayList<Book> queryBook(final String searchWord) {
-        String search = "%" + searchWord + "%";
-        List<Book> result = sqlSessionTemplate.selectList(NAMESPACE + "queryBook", search);
+    public ArrayList<Book> queryBook(String author,String publish,String name) {
+        Map<String, Object> paramMap = new HashMap<>();
+        String author1 = "%" + author + "%";
+        String publish1 = "%" + publish + "%";
+        String name1 = "%" + name + "%";
+        paramMap.put("author", author1);
+        paramMap.put("publish", publish1);
+        paramMap.put("name", name1);
+        List<Book> result = sqlSessionTemplate.selectList(NAMESPACE + "queryBook", paramMap);
         return (ArrayList<Book>) result;
     }
 

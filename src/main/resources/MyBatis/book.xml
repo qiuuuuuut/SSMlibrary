@@ -16,13 +16,31 @@
     <select id="getAllBooks" resultType="com.library.bean.Book">
         select * from book_info
     </select>
-    <select id="queryBook" resultType="com.library.bean.Book" parameterType="String">
-        select * from book_info where name like #{search}
-        or author like #{search}
+    <select id="queryBook" resultType="com.library.bean.Book" >
+        select * from book_info
+        where
+        <if test="name!=null">
+             name like  #{name}
+        </if>
+        <if test="author!=null">
+            and author like #{author}
+        </if>
+        <if test="publish!=null">
+            and  publish like #{publish}
+        </if>
     </select>
-    <select id="matchBook" resultType="int" parameterType="String">
-        select count(*) from book_info where name like #{search}
-        or author like #{search}
+    <select id="matchBook" resultType="int" >
+        select count(*) from book_info
+        where
+        <if test="name!=null">
+            name like  #{name}
+        </if>
+        <if test="author!=null">
+            and author like #{author}
+        </if>
+        <if test="publish!=null">
+            and  publish like #{publish}
+        </if>
     </select>
     <select id="getBook" resultType="com.library.bean.Book" parameterType="long">
         select * from book_info where book_id = #{book_id}
