@@ -9,7 +9,7 @@
   <script src="js/js.cookie.js"></script>
   <style>
     #Register{
-      height: 80%;
+      height: 90%;
       width: 28%;
       margin-left: auto;
       margin-right: auto;
@@ -31,7 +31,7 @@
 background-size:100% 100%;
 background-attachment: fixed;">
 
-<h2 style="text-align: center; color: white; font-family: '华文行楷'; font-size: 500%">注册</h2>
+<%--<h2 style="text-align: center; color: white; font-family: '华文行楷'; font-size: 500%">注册</h2>--%>
 
 <div class="panel panel-default" id="Register">
   <div class="panel-heading" style="background-color: #fff">
@@ -65,6 +65,11 @@ background-attachment: fixed;">
     <div class="form-group">
       <label for="phone">电话</label>
       <input type="text" class="form-control" id="phone">
+    </div>
+
+    <div class="form-group">
+      <label for="email">邮箱</label>
+      <input type="text" class="form-control" id="email">
     </div>
 
     <div class="form-group">
@@ -115,6 +120,7 @@ background-attachment: fixed;">
     var birth=$("#birth").val();
     var address=$("#address").val();
     var phone=$("#phone").val();
+    var email=$("#email").val();
     if (username == '') {
       $("#info").text("提示:账号不能为空");
     }
@@ -136,6 +142,9 @@ background-attachment: fixed;">
     else if(phone ==''){
       $("info").text("提示:电话不能为空");
     }
+    else if(email ==''){
+      $("info").text("提示:邮箱不能为空");
+    }
     else {
       $.ajax({
         type: "POST",
@@ -147,7 +156,8 @@ background-attachment: fixed;">
           sex:sex,
           birth:birth,
           address:address,
-          phone:phone
+          phone:phone,
+          email:email
         },
         dataType: "json",
         // success函数，请求成功后执行
@@ -160,6 +170,9 @@ background-attachment: fixed;">
           }
           else if(data.stateCode.trim() === "2") {
             $("#info").text("提示:验证码错误！");
+          }
+          else if(data.stateCode.trim() === "3") {
+            $("#info").text("提示:此邮箱已经被注册！");
           }
         }
       });

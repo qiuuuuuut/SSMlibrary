@@ -17,15 +17,19 @@ public class ReaderCardDao {
 
     private final static String NAMESPACE = "com.library.dao.ReaderCardDao.";
 
-    public int getIdMatchCount(final long reader_id, final String password) {
+    public int getIdMatchCount(final String email, final String password) {
         Map<String, Object> map = new HashMap<>();
-        map.put("reader_id", reader_id);
+        map.put("email", email);
         map.put("password", password);
         return sqlSessionTemplate.selectOne(NAMESPACE + "getIdMatchCount", map);
     }
 
     public ReaderCard findReaderByReaderId(final long reader_id) {
         return sqlSessionTemplate.selectOne(NAMESPACE + "findReaderByReaderId", reader_id);
+    }
+
+    public ReaderCard findReaderByEmail(String email) {
+        return sqlSessionTemplate.selectOne(NAMESPACE + "findReaderByEmail", email);
     }
 
     public int resetPassword(final long reader_id, final String newPassword) {

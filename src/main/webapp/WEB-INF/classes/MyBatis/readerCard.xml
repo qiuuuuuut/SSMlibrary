@@ -3,10 +3,14 @@
 <mapper namespace="com.library.dao.ReaderCardDao">
     <select id="getIdMatchCount" resultType="int">
         select count(*) from reader_card where
-        reader_id = #{reader_id} and password = #{password}
+        email = #{email} and password = #{password}
     </select>
     <select id="findReaderByReaderId" resultType="com.library.bean.ReaderCard" parameterType="long">
         select * from reader_card where reader_id = #{reader_id}
+    </select>
+
+    <select id="findReaderByEmail" resultType="com.library.bean.ReaderCard" parameterType="String">
+        select * from reader_card where email = #{email}
     </select>
     <update id="resetPassword">
         update reader_card set password = #{password}

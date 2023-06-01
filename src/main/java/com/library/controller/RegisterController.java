@@ -38,7 +38,9 @@ public class RegisterController {
         String birth=request.getParameter("birth");
         String address=request.getParameter("address");
         String phone=request.getParameter("phone");
+        String email=request.getParameter("email");
         HashMap<String, String> res = new HashMap<>();
+        ReaderInfo reader = readerInfoService.getReaderInfoByEmail(email);
         //判断验证码是否正确（验证码已经放入session）
         HttpSession session = request.getSession();
         String realCode = (String)session.getAttribute("VerifyCode");
@@ -49,6 +51,12 @@ public class RegisterController {
 
             res.put("stateCode", "2");
             res.put("msg", "验证码错误！");
+            return res;
+        }
+
+        if(reader!=null){
+            res.put("stateCode", "3");
+            res.put("msg", "该邮箱已经被注册！");
             return res;
         }
         Date date = new Date();

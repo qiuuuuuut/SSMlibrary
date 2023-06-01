@@ -47,6 +47,10 @@ background-attachment: fixed;">
                     <span class="input-group-addon">电话</span>
                     <input type="text" class="form-control" name="phone" id="phone"  >
                 </div>
+                <div class="input-group" style="padding-top: 20px;">
+                    <span class="input-group-addon">邮箱</span>
+                    <input type="text" class="form-control" name="email" id="email"  >
+                </div>
                 <input style="align-items: center" type="submit" value="添加" class="btn btn-success btn-sm"
                        class="text-left">
                 <script>
@@ -54,7 +58,7 @@ background-attachment: fixed;">
                         return flag;
                     }
                     $("#readeredit").submit(function () {
-                        if($("#password").val()==''||$("#name").val()==''||$("#sex").val()==''||$("#birth").val()==''||$("#address").val()==''||$("#phone").val()==''){
+                        if($("#password").val()==''||$("#name").val()==''||$("#sex").val()==''||$("#birth").val()==''||$("#address").val()==''||$("#phone").val()==''||$("#email").val()==''){
                             alert("请填入完整读者信息！");
                             return mySubmit(false);
                         }

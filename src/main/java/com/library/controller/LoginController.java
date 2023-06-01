@@ -80,11 +80,18 @@ public class LoginController {
     @RequestMapping(value = "/api/loginCheck", method = RequestMethod.POST)
     @ResponseBody
     public Object loginCheck(HttpServletRequest request) {
-        long id = Long.parseLong(request.getParameter("id"));
+//        long id = Long.parseLong(request.getParameter("id"));
+        String email = request.getParameter("email");
         String passwd = request.getParameter("passwd");
         String yanzhenma=request.getParameter("yanzhenma");
-        boolean isReader = loginService.hasMatchReader(id, passwd);
-        boolean isAdmin = loginService.hasMatchAdmin(id, passwd);
+        boolean isReader = loginService.hasMatchReader(email, passwd);
+        boolean isAdmin = loginService.hasMatchAdmin(email, passwd);
+//        String e = loginService.getAdminEmail(passwd);
+//        System.out.println(e);
+//        System.out.println(email);
+//        System.out.println(passwd);
+//        System.out.println("isreader->"+isReader);
+//        System.out.println("isadmin->"+isAdmin);
         HashMap<String, String> res = new HashMap<>();
         //判断验证码是否正确（验证码已经放入session）
         HttpSession session = request.getSession();
@@ -100,15 +107,15 @@ public class LoginController {
         }
         if (isAdmin) {
             Admin admin = new Admin();
-            admin.setAdminId(id);
+            admin.setEmail(email);
             admin.setPassword(passwd);
-            String username = loginService.getAdminUsername(id);
+            String username = loginService.getAdminUsername(email);
             admin.setUsername(username);
             request.getSession().setAttribute("admin", admin);
             res.put("stateCode", "1");
             res.put("msg", "管理员登陆成功！");
         } else if (isReader) {
-            ReaderCard readerCard = loginService.findReaderCardByReaderId(id);
+            ReaderCard readerCard = loginService.findReaderCardByEmail(email);
             request.getSession().setAttribute("readercard", readerCard);
             res.put("stateCode", "2");
             res.put("msg", "读者登陆成功！");

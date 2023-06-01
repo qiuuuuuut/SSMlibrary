@@ -67,6 +67,10 @@ background-attachment: fixed;">
                     <th>电话</th>
                     <td>${readerinfo.phone}</td>
                 </tr>
+                <tr>
+                    <th>邮箱</th>
+                    <td>${readerinfo.email}</td>
+                </tr>
                 </tbody>
             </table>
         </div>

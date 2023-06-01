@@ -7,12 +7,15 @@
     <select id="findReaderInfoByReaderId" resultType="com.library.bean.ReaderInfo" parameterType="long">
         select * from reader_info where reader_id = #{reader_id}
     </select>
+    <select id="findReaderInfoByEmail" resultType="com.library.bean.ReaderInfo" parameterType="String">
+        select * from reader_info where email = #{email}
+    </select>
     <delete id="deleteReaderInfo" parameterType="long">
         delete from reader_info where reader_id = #{reader_id}
     </delete>
     <update id="editReaderInfo" parameterType="com.library.bean.ReaderInfo">
         update reader_info set name = #{name} , sex = #{sex},
-        birth = #{birth} ,address = #{address} ,phone = #{phone}
+        birth = #{birth} ,address = #{address} ,phone = #{phone} ,email=#{email}
         where reader_id = #{reader_id}
     </update>
     <update id="editReaderCard" parameterType="com.library.bean.ReaderInfo">
@@ -21,12 +24,12 @@
     </update>
     <insert id="addReaderInfo" parameterType="com.library.bean.ReaderInfo">
         insert into reader_info values
-        (null, #{name},#{sex},#{birth},#{address},#{phone})
+        (null, #{name},#{sex},#{birth},#{address},#{phone},#{email})
     </insert>
     <select id="getReaderId" resultType="long" parameterType="com.library.bean.ReaderInfo">
         select reader_id from reader_info where
         name = #{name} and sex = #{sex} and
         birth = #{birth} and address = #{address}
-        and phone = #{phone}
+        and phone = #{phone} and email =#{email}
     </select>
 </mapper>

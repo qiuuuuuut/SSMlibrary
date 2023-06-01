@@ -24,6 +24,9 @@ public class ReaderInfoDao {
         return sqlSessionTemplate.selectOne(NAMESPACE + "findReaderInfoByReaderId", reader_id);
     }
 
+    public ReaderInfo findReaderInfoByEmail(final String email) {
+        return sqlSessionTemplate.selectOne(NAMESPACE + "findReaderInfoByEmail", email);
+    }
     public int deleteReaderInfo(final long reader_id) {
         return sqlSessionTemplate.delete(NAMESPACE + "deleteReaderInfo", reader_id);
     }

@@ -3,7 +3,7 @@
 <mapper namespace="com.library.dao.AdminDao">
     <select id="getMatchCount" resultType="int">
         select count(*) from admin
-        where admin_id = #{admin_id}
+        where email = #{email}
         and password = #{password}
     </select>
     <update id="resetPassword">
@@ -13,7 +13,10 @@
     <select id="getPassword" resultType="String" parameterType="long">
         select password from admin where admin_id = #{admin_id}
     </select>
-    <select id="getUsername" resultType="String" parameterType="long">
-        select username from admin where admin_id = #{admin_id}
+    <select id="getUsername" resultType="String" parameterType="String">
+        select username from admin where email = #{email}
     </select>
+<!--    <select id="getUseremail" resultType="String" parameterType="String">-->
+<!--        select email from admin where password = #{password}-->
+<!--    </select>-->
 </mapper>

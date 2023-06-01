@@ -24,6 +24,10 @@ public class ReaderInfoService {
         return readerInfoDao.findReaderInfoByReaderId(readerId);
     }
 
+    public ReaderInfo getReaderInfoByEmail(String email) {
+        return readerInfoDao.findReaderInfoByEmail(email);
+    }
+
     public boolean editReaderInfo(ReaderInfo readerInfo) {
         return readerInfoDao.editReaderInfo(readerInfo) > 0;
     }

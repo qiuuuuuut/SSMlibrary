@@ -17,9 +17,9 @@ public class AdminDao {
     @Resource
     private SqlSessionTemplate sqlSessionTemplate;
 
-    public int getMatchCount(final long admin_id, final String password) {
+    public int getMatchCount(final String email, final String password) {
         Map<String, Object> paramMap = new HashMap<>();
-        paramMap.put("admin_id", admin_id);
+        paramMap.put("email", email);
         paramMap.put("password", password);
         return sqlSessionTemplate.selectOne(NAMESPACE + "getMatchCount", paramMap);
     }
@@ -36,8 +36,12 @@ public class AdminDao {
         return sqlSessionTemplate.selectOne(NAMESPACE + "getPassword", admin_id);
     }
 
-    public String getUsername(final long admin_id) {
-        return sqlSessionTemplate.selectOne(NAMESPACE + "getUsername", admin_id);
+    public String getUsername(final String email) {
+        return sqlSessionTemplate.selectOne(NAMESPACE + "getUsername", email);
     }
+
+//    public String getUseremail(final String password) {
+//        return sqlSessionTemplate.selectOne(NAMESPACE + "getUseremail", password);
+//    }
 
 }
