@@ -846,7 +846,7 @@
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="242" parent="216" name="ser_num">
-      <AutoIncrement>10</AutoIncrement>
+      <AutoIncrement>12</AutoIncrement>
       <DasType>bigint(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>

@@ -20,25 +20,29 @@ public class BookDao {
     private SqlSessionTemplate sqlSessionTemplate;
 
     //显示匹配书的数量，用于判断查找的时候是不是有匹配的书，没有的话，会出现‘没有匹配的书’
-    public int matchBook(String author,String publish,String name) {
+    public int matchBook(String author,String publish,String name,String class_name) {
         Map<String, Object> paramMap = new HashMap<>();
         String author1 = "%" + author + "%";
         String publish1 = "%" + publish + "%";
         String name1 = "%" + name + "%";
+        String class_name1 = "%" + class_name + "%";
         paramMap.put("author", author1);
         paramMap.put("publish", publish1);
         paramMap.put("name", name1);
+        paramMap.put("class_name", class_name1);
         return sqlSessionTemplate.selectOne(NAMESPACE + "matchBook", paramMap);
     }
 
-    public ArrayList<Book> queryBook(String author,String publish,String name) {
+    public ArrayList<Book> queryBook(String author,String publish,String name,String class_name) {
         Map<String, Object> paramMap = new HashMap<>();
         String author1 = "%" + author + "%";
         String publish1 = "%" + publish + "%";
         String name1 = "%" + name + "%";
+        String class_name1 = "%" + class_name + "%";
         paramMap.put("author", author1);
         paramMap.put("publish", publish1);
         paramMap.put("name", name1);
+        paramMap.put("class_name", class_name1);
         List<Book> result = sqlSessionTemplate.selectList(NAMESPACE + "queryBook", paramMap);
         return (ArrayList<Book>) result;
     }

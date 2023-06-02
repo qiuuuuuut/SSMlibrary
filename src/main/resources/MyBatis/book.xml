@@ -14,18 +14,19 @@
         class_id=#{class_id}, number=#{number} where book_id=#{book_id}
     </update>
     <select id="getAllBooks" resultType="com.library.bean.Book">
-        select * from book_info
+        select book_id, name, author, publish, ISBN, introduction, language, price, pub_date,  number, book_info.class_id, class_name from book_info,class_info where book_info.class_id = class_info.class_id
     </select>
 
     <select id="getAllBooksByReader" resultType="com.library.bean.Book">
-        SELECT *
+        SELECT book_info.*, class_info.class_name
         FROM book_info
         LEFT JOIN lend_list ON book_info.book_id = lend_list.book_id
+        LEFT JOIN class_info ON book_info.class_id = class_info.class_id
         WHERE book_info.number > 0 OR lend_list.reader_id = #{reader_id} AND lend_list.back_date IS NULL
         GROUP BY book_info.book_id, book_info.name
     </select>
     <select id="queryBook" resultType="com.library.bean.Book" >
-        select * from book_info
+        select * from book_info,class_info
         where
         <if test="name!=null">
              name like  #{name}
@@ -36,9 +37,12 @@
         <if test="publish!=null">
             and  publish like #{publish}
         </if>
+        <if test="class_name!=null">
+            and  (class_name like #{class_name} and class_info.class_id = book_info.class_id )
+        </if>
     </select>
     <select id="matchBook" resultType="int" >
-        select count(*) from book_info
+        select count(*) from book_info,class_info
         where
         <if test="name!=null">
             name like  #{name}
@@ -48,6 +52,9 @@
         </if>
         <if test="publish!=null">
             and  publish like #{publish}
+        </if>
+        <if test="class_name!=null">
+            and  (class_name like #{class_name} and class_info.class_id = book_info.class_id )
         </if>
     </select>
     <select id="getBook" resultType="com.library.bean.Book" parameterType="long">

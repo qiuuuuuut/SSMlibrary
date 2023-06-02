@@ -36,9 +36,9 @@ public class BookController {
     }
 
     @RequestMapping("/querybook.html")
-    public ModelAndView queryBookDo(String author,String publish,String name) {
-        if (bookService.matchBook(author,publish,name)) {
-            ArrayList<Book> books = bookService.queryBook(author,publish,name);
+    public ModelAndView queryBookDo(String author,String publish,String name,String type) {
+        if (bookService.matchBook(author,publish,name,type)) {
+            ArrayList<Book> books = bookService.queryBook(author,publish,name,type);
             ModelAndView modelAndView = new ModelAndView("admin_books");
             modelAndView.addObject("books", books);//在 JSP页面中可以通过 EL 表达式 ${books} 来获取属性的值。
             return modelAndView;
@@ -48,9 +48,9 @@ public class BookController {
     }
 
     @RequestMapping("/reader_querybook_do.html")
-    public ModelAndView readerQueryBookDo(String author,String publish,String name) {
-        if (bookService.matchBook(author,publish,name)) {
-            ArrayList<Book> books = bookService.queryBook(author,publish,name);
+    public ModelAndView readerQueryBookDo(String author,String publish,String name,String type) {
+        if (bookService.matchBook(author,publish,name,type)) {
+            ArrayList<Book> books = bookService.queryBook(author,publish,name,type);
             ModelAndView modelAndView = new ModelAndView("reader_books");
             modelAndView.addObject("books", books);
             return modelAndView;

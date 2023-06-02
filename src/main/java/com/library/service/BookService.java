@@ -12,8 +12,8 @@ public class BookService {
     @Autowired
     private BookDao bookDao;
 
-    public ArrayList<Book> queryBook(String author,String publish,String name) {
-        return bookDao.queryBook(author,publish,name);
+    public ArrayList<Book> queryBook(String author,String publish,String name,String class_name) {
+        return bookDao.queryBook(author,publish,name,class_name);
     }
 
     public ArrayList<Book> getAllBooks() {
@@ -24,8 +24,8 @@ public class BookService {
         return bookDao.getAllBooksByReader(reader_id);
     }
 
-    public boolean matchBook(String author,String publish,String name) {
-        return bookDao.matchBook(author,publish,name) > 0;
+    public boolean matchBook(String author,String publish,String name,String class_name) {
+        return bookDao.matchBook(author,publish,name,class_name) > 0;
     }
 
     public boolean addBook(Book book) {
