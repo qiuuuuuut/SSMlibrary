@@ -2,6 +2,7 @@ package com.library.controller;
 
 import com.library.bean.Book;
 import com.library.bean.Lend;
+import com.library.bean.LendPlus;
 import com.library.bean.ReaderCard;
 import com.library.service.BookService;
 import com.library.service.LendService;
@@ -135,11 +136,11 @@ public class BookController {
     public ModelAndView readerBooks(HttpServletRequest request) {
 
         ReaderCard readerCard = (ReaderCard) request.getSession().getAttribute("readercard");
-        ArrayList<Lend> myAllLendList = lendService.myLendList(readerCard.getReaderId());
+        ArrayList<LendPlus> myAllLendList = lendService.myLendList(readerCard.getReaderId());
         ArrayList<Book> books = bookService.getAllBooksByReader(readerCard.getReaderId());
         System.out.println(readerCard.getReaderId());
         ArrayList<Long> myLendList = new ArrayList<>();
-        for (Lend lend : myAllLendList) {
+        for (LendPlus lend : myAllLendList) {
             // 是否已归还
             if (lend.getBackDate() == null) {
                 myLendList.add(lend.getBookId());

@@ -15,11 +15,17 @@
     <update id="lendBookTwo" parameterType="long">
         update book_info set number = number - 1 where book_id = #{book_id}
     </update>
-    <select id="lendList" resultType="com.library.bean.Lend">
-        select * from lend_list
+    <select id="lendList" resultType="com.library.bean.LendPlus">
+        SELECT lend_list.ser_num, lend_list.book_id, book_info.name, book_info.publish,book_info.ISBN, lend_list.reader_id, lend_list.lend_date, lend_list.back_date
+        FROM lend_list
+        INNER JOIN book_info
+        ON lend_list.book_id = book_info.book_id;
     </select>
-    <select id="myLendList" resultType="com.library.bean.Lend" parameterType="long">
-        select * from lend_list where reader_id = #{reader_id}
+    <select id="myLendList" resultType="com.library.bean.LendPlus" parameterType="long">
+        SELECT lend_list.ser_num, lend_list.book_id, book_info.name, book_info.publish,book_info.ISBN, lend_list.reader_id, lend_list.lend_date, lend_list.back_date
+        FROM lend_list
+        INNER JOIN book_info
+        ON lend_list.book_id = book_info.book_id and reader_id =#{reader_id};
     </select>
     <delete id="deleteLend" parameterType="long">
         delete from lend_list where ser_num = #{ser_num}
