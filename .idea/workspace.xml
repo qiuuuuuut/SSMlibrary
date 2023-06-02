@@ -10,16 +10,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ef084b5-bb77-4f1a-911b-9b99a0ea9d05" name="变更" comment="变更">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/11f411ec-8d24-44a7-a9f8-698951b39f4b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/11f411ec-8d24-44a7-a9f8-698951b39f4b.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/library/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/controller/BookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/library/dao/BookDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/dao/BookDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/library/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/service/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MyBatis/book.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/MyBatis/book.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/MyBatis/book.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/MyBatis/book.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/library/controller/BookController.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/library/controller/BookController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/library/dao/BookDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/library/dao/BookDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/library/service/BookService.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/library/service/BookService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/library/dao/LendDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/dao/LendDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/library/service/LendService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/service/LendService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MyBatis/lend.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/MyBatis/lend.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/MyBatis/lend.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/MyBatis/lend.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/library/dao/LendDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/library/dao/LendDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/library/service/LendService.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/library/service/LendService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin_lend_list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/admin_lend_list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/reader_lend_list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/reader_lend_list.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/library.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/library.war" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -96,6 +95,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\LibrarySystem\src\main\java\com\library" />
       <recent name="D:\LibrarySystem\src\main\webapp\static\img" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.library.bean" />
     </key>
   </component>
   <component name="RunManager">
@@ -206,7 +208,7 @@
       <workItem from="1685418978648" duration="11096000" />
       <workItem from="1685531960278" duration="6002000" />
       <workItem from="1685581796221" duration="17927000" />
-      <workItem from="1685677822790" duration="3296000" />
+      <workItem from="1685677822790" duration="7936000" />
     </task>
     <servers />
   </component>

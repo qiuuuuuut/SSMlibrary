@@ -49,6 +49,9 @@ background-attachment: fixed;">
             <tr>
                 <th>流水号</th>
                 <th>图书号</th>
+                <th>图书名</th>
+                <th>出版社</th>
+                <th>ISBN</th>
                 <th>读者证号</th>
                 <th>借出日期</th>
                 <th>归还日期</th>
@@ -60,6 +63,9 @@ background-attachment: fixed;">
                 <tr>
                     <td><c:out value="${alog.ser_num}"></c:out></td>
                     <td><c:out value="${alog.bookId}"></c:out></td>
+                    <td><c:out value="${alog.name}"></c:out></td>
+                    <td><c:out value="${alog.publish}"></c:out></td>
+                    <td><c:out value="${alog.ISBN}"></c:out></td>
                     <td><c:out value="${alog.readerId}"></c:out></td>
                     <td><c:out value="${alog.lendDate}"></c:out></td>
                     <td><c:out value="${alog.backDate}"></c:out></td>

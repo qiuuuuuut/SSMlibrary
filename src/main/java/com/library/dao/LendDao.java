@@ -1,6 +1,7 @@
 package com.library.dao;
 
 import com.library.bean.Lend;
+import com.library.bean.LendPlus;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -45,15 +46,15 @@ public class LendDao {
     }
 
     //管理员：展示所有借书记录
-    public ArrayList<Lend> lendList() {
-        List<Lend> result = sqlSessionTemplate.selectList(NAMESPACE + "lendList");
-        return (ArrayList<Lend>) result;
+    public ArrayList<LendPlus> lendList() {
+        List<LendPlus> result = sqlSessionTemplate.selectList(NAMESPACE + "lendList");
+        return (ArrayList<LendPlus>) result;
     }
 
 //    读者：展示自己的借书记录
-    public ArrayList<Lend> myLendList(final long reader_id) {
-        List<Lend> result = sqlSessionTemplate.selectList(NAMESPACE + "myLendList", reader_id);
-        return (ArrayList<Lend>) result;
+    public ArrayList<LendPlus> myLendList(final long reader_id) {
+        List<LendPlus> result = sqlSessionTemplate.selectList(NAMESPACE + "myLendList", reader_id);
+        return (ArrayList<LendPlus>) result;
     }
 
     //删除借书记录，没还的不能删

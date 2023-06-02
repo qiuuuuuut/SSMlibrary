@@ -1,6 +1,7 @@
 package com.library.service;
 
 import com.library.bean.Lend;
+import com.library.bean.LendPlus;
 import com.library.dao.LendDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,10 +21,10 @@ public class LendService {
         return lendDao.lendBookOne(bookId,readerId)>0 && lendDao.lendBookTwo(bookId)>0;
     }
 
-    public ArrayList<Lend> lendList(){
+    public ArrayList<LendPlus> lendList(){
         return lendDao.lendList();
     }
-    public ArrayList<Lend> myLendList(long readerId){
+    public ArrayList<LendPlus> myLendList(long readerId){
         return lendDao.myLendList(readerId);
     }
 
