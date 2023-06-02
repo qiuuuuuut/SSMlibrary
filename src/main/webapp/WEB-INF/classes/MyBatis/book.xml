@@ -16,6 +16,14 @@
     <select id="getAllBooks" resultType="com.library.bean.Book">
         select * from book_info
     </select>
+
+    <select id="getAllBooksByReader" resultType="com.library.bean.Book">
+        SELECT *
+        FROM book_info
+        LEFT JOIN lend_list ON book_info.book_id = lend_list.book_id
+        WHERE book_info.number > 0 OR lend_list.reader_id = #{reader_id} AND lend_list.back_date IS NULL
+        GROUP BY book_info.book_id, book_info.name
+    </select>
     <select id="queryBook" resultType="com.library.bean.Book" >
         select * from book_info
         where

@@ -48,6 +48,11 @@ public class BookDao {
         return (ArrayList<Book>) result;
     }
 
+    public ArrayList<Book> getAllBooksByReader(long reader_id) {
+        List<Book> result = sqlSessionTemplate.selectList(NAMESPACE + "getAllBooksByReader",reader_id);
+        return (ArrayList<Book>) result;
+    }
+
     public int addBook(final Book book) {
         return sqlSessionTemplate.insert(NAMESPACE + "addBook", book);
     }

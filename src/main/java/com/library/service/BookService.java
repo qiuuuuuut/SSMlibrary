@@ -20,6 +20,10 @@ public class BookService {
         return bookDao.getAllBooks();
     }
 
+    public ArrayList<Book> getAllBooksByReader(long reader_id) {
+        return bookDao.getAllBooksByReader(reader_id);
+    }
+
     public boolean matchBook(String author,String publish,String name) {
         return bookDao.matchBook(author,publish,name) > 0;
     }

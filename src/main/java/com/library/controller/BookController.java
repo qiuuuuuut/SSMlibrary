@@ -133,9 +133,11 @@ public class BookController {
 
     @RequestMapping("/reader_books.html")
     public ModelAndView readerBooks(HttpServletRequest request) {
-        ArrayList<Book> books = bookService.getAllBooks();
+
         ReaderCard readerCard = (ReaderCard) request.getSession().getAttribute("readercard");
         ArrayList<Lend> myAllLendList = lendService.myLendList(readerCard.getReaderId());
+        ArrayList<Book> books = bookService.getAllBooksByReader(readerCard.getReaderId());
+        System.out.println(readerCard.getReaderId());
         ArrayList<Long> myLendList = new ArrayList<>();
         for (Lend lend : myAllLendList) {
             // 是否已归还
